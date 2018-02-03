@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "led_blink", "led_blink\led_blink.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "led_button", "led_button\led_button.cproj", "{0C8B2897-D40A-49BD-8BC1-AD66F812FAC6}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "led_patterns", "led_patterns\led_patterns.cproj", "{19A2CC27-00FE-4068-9BEB-1C937233709A}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "led_lookup", "led_lookup\led_lookup.cproj", "{491101E2-645A-479F-8161-64BAFFE500E1}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "states", "states\states.cproj", "{57B5DD8E-9638-48DD-8AF3-4999570611A5}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "fsm", "fsm\fsm.cproj", "{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{0C8B2897-D40A-49BD-8BC1-AD66F812FAC6}.Debug|AVR.ActiveCfg = Debug|AVR
+		{0C8B2897-D40A-49BD-8BC1-AD66F812FAC6}.Debug|AVR.Build.0 = Debug|AVR
+		{0C8B2897-D40A-49BD-8BC1-AD66F812FAC6}.Release|AVR.ActiveCfg = Release|AVR
+		{0C8B2897-D40A-49BD-8BC1-AD66F812FAC6}.Release|AVR.Build.0 = Release|AVR
+		{19A2CC27-00FE-4068-9BEB-1C937233709A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{19A2CC27-00FE-4068-9BEB-1C937233709A}.Debug|AVR.Build.0 = Debug|AVR
+		{19A2CC27-00FE-4068-9BEB-1C937233709A}.Release|AVR.ActiveCfg = Release|AVR
+		{19A2CC27-00FE-4068-9BEB-1C937233709A}.Release|AVR.Build.0 = Release|AVR
+		{491101E2-645A-479F-8161-64BAFFE500E1}.Debug|AVR.ActiveCfg = Debug|AVR
+		{491101E2-645A-479F-8161-64BAFFE500E1}.Debug|AVR.Build.0 = Debug|AVR
+		{491101E2-645A-479F-8161-64BAFFE500E1}.Release|AVR.ActiveCfg = Release|AVR
+		{491101E2-645A-479F-8161-64BAFFE500E1}.Release|AVR.Build.0 = Release|AVR
+		{57B5DD8E-9638-48DD-8AF3-4999570611A5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{57B5DD8E-9638-48DD-8AF3-4999570611A5}.Debug|AVR.Build.0 = Debug|AVR
+		{57B5DD8E-9638-48DD-8AF3-4999570611A5}.Release|AVR.ActiveCfg = Release|AVR
+		{57B5DD8E-9638-48DD-8AF3-4999570611A5}.Release|AVR.Build.0 = Release|AVR
+		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Debug|AVR.Build.0 = Debug|AVR
+		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Release|AVR.ActiveCfg = Release|AVR
+		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
