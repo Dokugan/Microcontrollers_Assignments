@@ -29,7 +29,7 @@ ISR( INT0_vect )
 
 ISR( INT2_vect )
 {
-    if (i > 0)
+    if (i >= 0)
     {
 	    PORTB <<= 1;
 	    i--;
@@ -47,7 +47,7 @@ int main( void )
 	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	
 
 	// Init Interrupt hardware
-	EICRA |= 0x23;			// INT1 falling edge, INT0 rising edge
+	EICRA |= 0x22;			// INT1 falling edge, INT0 rising edge
 	EIMSK |= 0x05;			// Enable INT1 & INT0
 	// Enable global interrupt system
 	//SREG = 0x80;			// Of direct via SREG of via wrapper

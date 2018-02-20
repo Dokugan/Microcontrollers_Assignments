@@ -17,6 +17,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "fsm", "fsm\fsm.cproj", "{9C
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "interrupts", "interrupts\interrupts.cproj", "{727820B7-1C54-410E-9E1D-47E57E395AC4}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "segment_display", "segment_display\segment_display.cproj", "{B30F9D64-8601-4DCB-B8CC-1ED3EE7F893F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -51,6 +53,10 @@ Global
 		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Debug|AVR.Build.0 = Debug|AVR
 		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Release|AVR.ActiveCfg = Release|AVR
 		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Release|AVR.Build.0 = Release|AVR
+		{B30F9D64-8601-4DCB-B8CC-1ED3EE7F893F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B30F9D64-8601-4DCB-B8CC-1ED3EE7F893F}.Debug|AVR.Build.0 = Debug|AVR
+		{B30F9D64-8601-4DCB-B8CC-1ED3EE7F893F}.Release|AVR.ActiveCfg = Release|AVR
+		{B30F9D64-8601-4DCB-B8CC-1ED3EE7F893F}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
