@@ -15,6 +15,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "states", "states\states.cpr
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "fsm", "fsm\fsm.cproj", "{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "interrupts", "interrupts\interrupts.cproj", "{727820B7-1C54-410E-9E1D-47E57E395AC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -45,6 +47,10 @@ Global
 		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Debug|AVR.Build.0 = Debug|AVR
 		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Release|AVR.ActiveCfg = Release|AVR
 		{9C28F7E6-0FF0-4DBC-8608-CEEE4ECBF03F}.Release|AVR.Build.0 = Release|AVR
+		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Debug|AVR.Build.0 = Debug|AVR
+		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Release|AVR.ActiveCfg = Release|AVR
+		{727820B7-1C54-410E-9E1D-47E57E395AC4}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
