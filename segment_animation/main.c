@@ -61,7 +61,7 @@ void wait( int ms )
 
 void display(unsigned char digit)
 {
-		
+		PORTB = digit;
 }
 
 int main(void)
@@ -77,7 +77,7 @@ int main(void)
 	display(num);
     while (1) 
     {
-		for(i = 0; i < 13){
+		for(i = 0; i < 13; i++){
 			display(Animation1[i]);
 			wait(100);
 		}
