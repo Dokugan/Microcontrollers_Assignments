@@ -4,6 +4,7 @@
  * Created: 22-2-2018 16:44:50
  * Author : stijn
  */ 
+#define F_CPU 8000000
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -16,22 +17,24 @@ void lcd_pulse_e()
 {
 	if (write == 0)
 	{		
-		PORTC |= 0b1000;
+		PORTC |= 0b00001000;
 		_delay_ms(1);
-		PORTC &= 0b0000;
+		PORTC &= 0b11110000;
+		_delay_ms(1);
 	}
 	else
 	{
-		PORTC |= 0b1010;
+		PORTC |= 0b00001100;
 		_delay_ms(1);
-		PORTC &= 0b0010;
+		PORTC &= 0b11110100;
+		_delay_ms(1);
 	}
 }
 
 void lcd_write_command(unsigned char cmd){
-	PORTC |= (cmd & 0xF0) //First part
+	PORTC |= (cmd & 0xF0); //First part
 	lcd_pulse_e();
-	PORTC |= (cmd << 4) //Second part
+	PORTC = (cmd << 4); //Second part
 	lcd_pulse_e();
 }
 
