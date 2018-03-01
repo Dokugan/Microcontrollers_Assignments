@@ -5,6 +5,7 @@
  * Author : stijn
  */ 
 #define F_CPU 8000000
+#define LCDPORT PORTC
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -17,34 +18,34 @@ void lcd_pulse_e()
 {
 	if (write == 0)
 	{		
-		PORTC |= 0b00001000;
+		LCDPORT |= 0b00001000;
 		_delay_ms(1);
-		PORTC &= 0b11110000;
+		LCDPORT &= 0b11110000;
 		_delay_ms(1);
 	}
 	else
 	{
-		PORTC |= 0b00001100;
+		LCDPORT |= 0b00001100;
 		_delay_ms(1);
-		PORTC &= 0b11110100;
+		LCDPORT &= 0b11110100;
 		_delay_ms(1);
 	}
 }
 
 void lcd_write_command(unsigned char cmd){
-	PORTC |= (cmd & 0xF0); //First part
+	LCDPORT = (cmd & 0xF0); //First part
 	lcd_pulse_e();
-	PORTC = (cmd << 4); //Second part
+	LCDPORT = (cmd << 4); //Second part
 	lcd_pulse_e();
 }
 
 void lcd_4bit_init()
 {	
 	DDRC = 0xFF;
-	PORTC = 0x00;
+	LCDPORT = 0x00;
 	
 	//step 1 set 4 bit mode
-	PORTC |= (LCD4BIT & 0xF0);
+	LCDPORT = (LCD4BIT & 0xF0);
 	lcd_pulse_e();
 	
 	//step 2, 2 line mode
@@ -60,9 +61,9 @@ void lcd_4bit_init()
 void lcd_write_char(unsigned char c)
 {
 	write = 1;
-	PORTC |= (c & 0xF0);
+	LCDPORT = (c & 0xF0);
 	lcd_pulse_e();
-	PORTC |= (c << 4);
+	LCDPORT = (c << 4);
 	lcd_pulse_e();
 	write = 0;
 }

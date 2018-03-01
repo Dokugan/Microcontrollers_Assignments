@@ -15,13 +15,15 @@
 int main(void){
 	DDRD = 0xFF;
 	lcd_4bit_init();
-	lcd_write_char('c');
-	
+	lcd_write_command(LCDBLINK);
+	lcd_write_string("test", 4);
+	/*
 	while (1)
 	{
 		PORTD ^= (1<<7);	// Toggle PORTD.7
 		_delay_ms( 250 );
 	}
+	*/
 
 	return 1;
 }

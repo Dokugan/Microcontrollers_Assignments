@@ -9,8 +9,8 @@
 #ifndef LCD_DISPLAY_FUNCTIONS_H_
 #define LCD_DISPLAY_FUNCTIONS_H_
 
-								//7654 3210
-								//||||-||||
+									//7654 3210
+									//||||-||||
 #define LCD4BIT			0x20		//0010 0000
 #define LCD2LINE		0x24		//0010 1000
 #define LCDDISON		0x0C		//0000 1100
