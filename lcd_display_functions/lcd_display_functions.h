@@ -18,6 +18,10 @@
 #define LCDBLINK		0x0F		//0000 1111
 #define LCDSHIFT		0x06		//0000 0110
 
+void lcd_4bit_init();
+void lcd_write_command(unsigned char);
+void lcd_write_char(unsigned char);
+void lcd_write_string(char*);
 
 
 #endif /* LCD_DISPLAY_FUNCTIONS_H_ */
