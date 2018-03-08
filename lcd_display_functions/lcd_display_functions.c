@@ -15,6 +15,8 @@
 
 int write = 0;
 
+//This funtion sends a signal to the pin that data is being send (high / 1).
+//Or that we are finished sending data (low / 0)
 void lcd_pulse_e()
 {
 	if (write == 0)
