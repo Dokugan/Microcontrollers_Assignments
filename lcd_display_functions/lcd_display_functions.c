@@ -9,6 +9,7 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <string.h>
 
 #include "lcd_display_functions.h"
 
@@ -68,9 +69,9 @@ void lcd_write_char(unsigned char c)
 	write = 0;
 }
 
-void lcd_write_string(char* str, int length)
+void lcd_write_string(char* str)
 {
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < strlen(str); i++)
 	{
 		lcd_write_char(str[i]);
 	}

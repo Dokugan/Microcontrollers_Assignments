@@ -21,7 +21,7 @@
 void lcd_4bit_init();
 void lcd_write_command(unsigned char);
 void lcd_write_char(unsigned char);
-void lcd_write_string(char*, int);
+void lcd_write_string(char*);
 
 
 #endif /* LCD_DISPLAY_FUNCTIONS_H_ */
