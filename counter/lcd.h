@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef LCD_DISPLAY_FUNCTIONS_H_
-#define LCD_DISPLAY_FUNCTIONS_H_
+#ifndef LCD_H_
+#define LCD_H_
 
 									//7654 3210
 									//||||-||||

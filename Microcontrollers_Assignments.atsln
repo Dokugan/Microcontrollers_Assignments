@@ -23,6 +23,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "segment_animation", "segmen
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "lcd_display", "lcd_display_functions\lcd_display.cproj", "{F12F37EA-99A8-41B4-88FE-C028BC8BC709}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "counter", "counter\counter.cproj", "{87BF3E7A-A0F4-4B1A-B226-EE745BA29CDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -69,6 +71,10 @@ Global
 		{F12F37EA-99A8-41B4-88FE-C028BC8BC709}.Debug|AVR.Build.0 = Debug|AVR
 		{F12F37EA-99A8-41B4-88FE-C028BC8BC709}.Release|AVR.ActiveCfg = Release|AVR
 		{F12F37EA-99A8-41B4-88FE-C028BC8BC709}.Release|AVR.Build.0 = Release|AVR
+		{87BF3E7A-A0F4-4B1A-B226-EE745BA29CDB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{87BF3E7A-A0F4-4B1A-B226-EE745BA29CDB}.Debug|AVR.Build.0 = Debug|AVR
+		{87BF3E7A-A0F4-4B1A-B226-EE745BA29CDB}.Release|AVR.ActiveCfg = Release|AVR
+		{87BF3E7A-A0F4-4B1A-B226-EE745BA29CDB}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
