@@ -16,7 +16,10 @@ int main(void){
 	DDRD = 0xFF;
 	lcd_4bit_init();
 	lcd_write_command(LCDBLINK);
-	lcd_write_string("hallo stijn");
+	lcd_write_string("hallostijhn", 11);
+	
+	lcd_set_cursor(5, 2);
+	
 	/*
 	while (1)
 	{

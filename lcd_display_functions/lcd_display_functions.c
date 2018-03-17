@@ -15,8 +15,10 @@
 
 int write = 0;
 
-//This funtion sends a signal to the pin that data is being send (high / 1).
-//Or that we are finished sending data (low / 0)
+/************************************************************************/
+/*	This funtion sends a high signal to pin E and then sets it back to	*/
+/*	low so that that data is being send.                                */
+/************************************************************************/
 void lcd_pulse_e()
 {
 	if (write == 0)
@@ -71,11 +73,27 @@ void lcd_write_char(unsigned char c)
 	write = 0;
 }
 
-void lcd_write_string(char* str)
+void lcd_write_string(char* str, int len)
 {
-	for (int i = 0; i < strlen(str); i++)
+	for (int i = 0; i < len; i++)
 	{
 		lcd_write_char(str[i]);
+	}
+}
+
+void lcd_return_home(){
+	lcd_write_command(LCDRETURNHOME);
+}
+
+void lcd_set_cursor(int pos, int line){
+	lcd_return_home();
+	if (line == 2)
+		pos+=40;
+		
+	int i;
+	for (i = 0; i < pos; i++)
+	{
+		lcd_write_command(LCDCURSOR_R);
 	}
 }
 
