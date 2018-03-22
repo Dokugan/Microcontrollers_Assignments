@@ -29,6 +29,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "timer", "timer\timer.cproj"
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "adc", "adc\adc.cproj", "{43466507-DD85-4D68-8915-08E503087EFD}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "spi", "spi\spi.cproj", "{DFFCDF05-A390-4C15-B9C9-FA47506810EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -87,6 +89,10 @@ Global
 		{43466507-DD85-4D68-8915-08E503087EFD}.Debug|AVR.Build.0 = Debug|AVR
 		{43466507-DD85-4D68-8915-08E503087EFD}.Release|AVR.ActiveCfg = Release|AVR
 		{43466507-DD85-4D68-8915-08E503087EFD}.Release|AVR.Build.0 = Release|AVR
+		{DFFCDF05-A390-4C15-B9C9-FA47506810EE}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DFFCDF05-A390-4C15-B9C9-FA47506810EE}.Debug|AVR.Build.0 = Debug|AVR
+		{DFFCDF05-A390-4C15-B9C9-FA47506810EE}.Release|AVR.ActiveCfg = Release|AVR
+		{DFFCDF05-A390-4C15-B9C9-FA47506810EE}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
