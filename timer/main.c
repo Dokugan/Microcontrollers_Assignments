@@ -5,15 +5,14 @@
  * Author : Stijn
  */ 
 #define BIT(x) (1 << (x))
-#ifndef F_CPU
+
 #define F_CPU 8000000
-#endif
 
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>	
 
-int ms = 0;
+int milis = 0;
 
 void wait( int ms){
 	for (int i=0; i<ms; i++)
@@ -23,31 +22,31 @@ void wait( int ms){
 }
 
 ISR(TIMER2_COMP_vect){
-	ms++;
-	if (ms == 15)
+	milis++;
+	if (milis == 15)
 	{
 		PORTD &= ~BIT(7);	
 	}
-	if (ms == 40)
+	if (milis == 40)
 	{
 		PORTD |= BIT(7);
-		ms = 0;
+		milis = 0;
 	}
 	TCNT2 = 0;
 }
 
 int main(void)
 {	
+	TCCR2 = 0b00001101;
 	DDRD = 0xFF;
 	PORTD |= BIT(7);
 	OCR2 = 8; // Compare value of counter 2
 	TIMSK |= BIT(7); // T2 compare match interrupt enable
 	sei();
-	TCCR2 = 0b00100101;
 
     while (1) 
     {
-		wait(10);
+		wait(1);
     }
 }
 
