@@ -44,7 +44,7 @@ int main(void)
 	TIMSK |= BIT(7); // T2 compare match interrupt enable
 	sei();
 	TCCR2 = 0b00100101;
-    /* Replace with your application code */
+
     while (1) 
     {
 		wait(10);
