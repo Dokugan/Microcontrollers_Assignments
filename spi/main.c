@@ -8,6 +8,8 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define BIT(x)		( 1<<x )
 #define DDR_SPI		DDRB					// spi Data direction register
@@ -53,45 +55,53 @@ void spisd(char slavenr)
 	PORTB |= BIT(slavenr);
 }
 
+void spiSendCommand(char adress, char value){
+	spiss(SPI_SS);
+	SPIsendDataMaster(adress);
+	SPIsendDataMaster(value);
+	spisd(SPI_SS);
+}
+
+void spiWriteNumber(int number){
+	char snum[4];
+	itoa(number, snum, 10);
+	if (strlen(snum) <= 4)
+	{
+		for(int i = 1; i <= strlen(snum); i++)
+		{
+			spiSendCommand(i, snum[strlen(snum) - i]);
+		}
+	}
+	else
+	{
+		for (char i =1; i<=4; i++)
+		{
+			spiSendCommand(i, 9);
+		}
+	}
+}
+
 void displayDriverInit()
 {
-	spiss(SPI_SS);				// Select display chip (MAX7219)
-	SPIsendDataMaster(0x09);      			// Register 09: Decode Mode
-	SPIsendDataMaster(0xFF);				// 	-> 1's = BCD mode for all digits
-	spisd(SPI_SS);			// Deselect display chip
+	spiSendCommand(9,0xFF);	// Register 09: Decode Mode -> 1's = BCD mode for all digits
 
-	spiss(SPI_SS);				// Select dispaly chip
-	SPIsendDataMaster(0x0A);      			// Register 0A: Intensity
-	SPIsendDataMaster(0x0F);    			//  -> Level 4 (in range [1..F])
-	spisd(SPI_SS);			// Deselect display chip
-
-	spiss(SPI_SS);				// Select display chip
-	SPIsendDataMaster(0x0B);  				// Register 0B: Scan-limit
-	SPIsendDataMaster(0x03);   				// 	-> 1 = Display digits 0..3
-	spisd(SPI_SS);			// Deselect display chip
-
-	spiss(SPI_SS);				// Select display chip
-	SPIsendDataMaster(0x0C); 				// Register 0B: Shutdown register
-	SPIsendDataMaster(0x01); 				// 	-> 1 = Normal operation
-	spisd(SPI_SS);			// Deselect display chip
+	spiSendCommand(0x0A, 0x0F);	// Register 0A: Intensity -> Level 4 (in range [1..F])
+	
+	spiSendCommand(0x0B, 0x03);	// Register 0B: Scan-limit -> 1 = Display digits 0..3
+	
+	spiSendCommand(0x0C, 0x01);	// Register 0B: Shutdown register -> 1 = Normal operation
 }
 
 // Set display on ('normal operation')
 void displayOn()
 {
-	spiss(SPI_SS);				// Select display chip
-	SPIsendDataMaster(0x0C); 				// Register 0B: Shutdown register
-	SPIsendDataMaster(0x01); 				// 	-> 1 = Normal operation
-	spisd(SPI_SS);			// Deselect display chip
+	spiSendCommand(0x0C, 1);	// Register 0B: Shutdown register -> 1 = Normal operation
 }
 
 // Set display off ('shut down')
 void displayOff()
 {
-	spiss(SPI_SS);				// Select display chip
-	SPIsendDataMaster(0x0C); 				// Register 0B: Shutdown register
-	SPIsendDataMaster(0x00); 				// 	-> 1 = Normal operation
-	spisd(SPI_SS);			// Deselect display chip
+	spiSendCommand(0x0C, 0);	// Register 0B: Shutdown register -> 1 = Normal operation
 }
 
 int main(void)
@@ -102,13 +112,11 @@ int main(void)
 	
 	for (char i =1; i<=4; i++)
 	{
-		spiss(SPI_SS); 		// Select display chip
-		SPIsendDataMaster(i);  				// 	digit adress: (digit place)
-		SPIsendDataMaster(i);				// 	digit value: 0
-		spisd(SPI_SS);		// Deselect display chip
+		spiSendCommand(i, 0);
 	}
     wait(1000);
-	
+	spiWriteNumber(12542);
+	wait(1000);
 	return(1);
 }
 
