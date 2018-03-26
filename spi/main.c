@@ -62,12 +62,12 @@ void displayDriverInit()
 
 	spiss(SPI_SS);				// Select dispaly chip
 	SPIsendDataMaster(0x0A);      			// Register 0A: Intensity
-	SPIsendDataMaster(0x04);    			//  -> Level 4 (in range [1..F])
+	SPIsendDataMaster(0x0F);    			//  -> Level 4 (in range [1..F])
 	spisd(SPI_SS);			// Deselect display chip
 
 	spiss(SPI_SS);				// Select display chip
 	SPIsendDataMaster(0x0B);  				// Register 0B: Scan-limit
-	SPIsendDataMaster(0x01);   				// 	-> 1 = Display digits 0..1
+	SPIsendDataMaster(0x03);   				// 	-> 1 = Display digits 0..3
 	spisd(SPI_SS);			// Deselect display chip
 
 	spiss(SPI_SS);				// Select display chip
@@ -100,27 +100,13 @@ int main(void)
 	SPIinitMaster();
 	displayDriverInit();
 	
-	//displayOn();
-	// clear display (all zero's)
-	for (char i =1; i<=2; i++)
+	for (char i =1; i<=4; i++)
 	{
 		spiss(SPI_SS); 		// Select display chip
 		SPIsendDataMaster(i);  				// 	digit adress: (digit place)
-		SPIsendDataMaster(0);				// 	digit value: 0
+		SPIsendDataMaster(i);				// 	digit value: 0
 		spisd(SPI_SS);		// Deselect display chip
 	}
-	wait(1000);
-	
-    // write 4-digit data
-    for (char i =1; i<=2; i++)
-    {
-	    spiss(SPI_SS);         // Select display chip
-	    SPIsendDataMaster(i);         		// 	digit adress: (digit place)
-	    SPIsendDataMaster(i);  		// 	digit value: i (= digit place)
-	    spisd(SPI_SS); 		// Deselect display chip
-	    
-	    wait(1000);
-    }
     wait(1000);
 	
 	return(1);
