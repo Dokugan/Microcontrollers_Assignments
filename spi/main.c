@@ -64,19 +64,39 @@ void spiSendCommand(char adress, char value){
 
 void spiWriteNumber(int number){
 	char snum[4];
+	//covert number to string
 	itoa(number, snum, 10);
+	
+	//check if amount of chars <= 4
 	if (strlen(snum) <= 4)
 	{
+		//loop through chars in string and display them
 		for(int i = 1; i <= strlen(snum); i++)
 		{
-			spiSendCommand(i, snum[strlen(snum) - i]);
+			//if contains minus char
+			if (snum[strlen(snum) - i] == '-')
+				spiSendCommand(i, 0x0A);
+			else
+				spiSendCommand(i, snum[strlen(snum) - i]);
 		}
 	}
+	//else write 9999
 	else
 	{
-		for (char i =1; i<=4; i++)
+		if (number < 0)
 		{
-			spiSendCommand(i, 9);
+			for (char i =1; i<=3; i++)
+			{
+				spiSendCommand(i, 9);
+			}
+			spiSendCommand(4, 0x0A);
+		}
+		else
+		{
+			for (char i =1; i<=4; i++)
+			{
+				spiSendCommand(i, 9);
+			}
 		}
 	}
 }
@@ -115,7 +135,7 @@ int main(void)
 		spiSendCommand(i, 0);
 	}
     wait(1000);
-	spiWriteNumber(12542);
+	spiWriteNumber(5132);
 	wait(1000);
 	return(1);
 }
