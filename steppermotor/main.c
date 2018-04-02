@@ -100,7 +100,6 @@ int main(void)
 	motorInit();
 	int direction = 1;
 	
-    /* Replace with your application code */
 	for (int i = 0; i < 48; i++)
 	{
 		motorFullStep(direction);
