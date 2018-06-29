@@ -96,16 +96,17 @@ void motorSixteenthStep(int dir){
 
 int main(void)
 {
+	
 	DDRC = 0x00;
 	motorInit();
 	int direction = 1;
-	
+	/**
 	for (int i = 0; i < 48; i++)
 	{
 		motorFullStep(direction);
 		wait(50);
 	}
-    
+    **/
 	while (1) 
     {
 		
@@ -122,6 +123,42 @@ int main(void)
 			for (int i = 0; i < 48; i++)
 			{
 				motorFullStep(direction);
+				wait(50);
+			}
+		}
+		if(PINC & 0x02)
+		{
+			wait(500);
+			for (int i = 0; i < 48; i++)
+			{
+				motorHalfStep(direction);
+				wait(50);
+			}
+		}
+		if(PINC & 0x03)
+		{
+			wait(500);
+			for (int i = 0; i < 48; i++)
+			{
+				motorQuarterStep(direction);
+				wait(50);
+			}
+		}
+		if(PINC & 0x04)
+		{
+			wait(500);
+			for (int i = 0; i < 48; i++)
+			{
+				motorEightStep(direction);
+				wait(50);
+			}
+		}
+		if(PINC & 0x05)
+		{
+			wait(500);
+			for (int i = 0; i < 48; i++)
+			{
+				motorSixteenthStep(direction);
 				wait(50);
 			}
 		}
