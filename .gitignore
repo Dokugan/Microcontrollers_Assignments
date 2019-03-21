@@ -149,3 +149,18 @@ ipch/
 # Visual Studio 6 workspace options file
 
 *.opt
+states/states.componentinfo.xml
+segment_animation/segment_animation.componentinfo.xml
+led_button/led_button.componentinfo.xml
+led_blink/led_blink.componentinfo.xml
+interrupts/interrupts.componentinfo.xml
+counter/counter.componentinfo.xml
+adc/adc.componentinfo.xml
+spi/spi.componentinfo.xml
+led_lookup/led_lookup.componentinfo.xml
+fsm/fsm.componentinfo.xml
+timer/timer.componentinfo.xml
+segment_display/segment_display.componentinfo.xml
+lcd_display_functions/lcd_display.componentinfo.xml
+led_patterns/led_patterns.componentinfo.xml
+steppermotor/steppermotor.componentinfo.xml
